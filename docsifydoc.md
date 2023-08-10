@@ -3,7 +3,7 @@
 ## SETUP DOCSIFY
 
 STEP -  
-1- create directory 
+1- create directory   
 2- create Dockerfile
 
 ```bash
