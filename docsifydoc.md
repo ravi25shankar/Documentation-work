@@ -81,7 +81,12 @@ Create github account
 - genrate Token  
 -  create repository   
 
-![Screenshot from 2023-08-10 12-10-29.png](Untitled%207e4046fca6de4d6aa328d013f192bab5/Screenshot_from_2023-08-10_12-10-29.png)
+![Screenshot from 2023-08-10 12-10-29](https://github.com/ravi25shankar/Documentation-work/assets/141721174/057c9b01-40d6-437e-ba6d-d7ad9d46d544)
+
+![image](https://github.com/ravi25shankar/Documentation-work/assets/141721174/3b4a736d-537c-4749-8f09-2ad74f915d6a)
+
+![image](https://github.com/ravi25shankar/Documentation-work/assets/141721174/4f21cd3e-d169-4aed-8b54-b720031b5442)
+
 
 Login in github via command line  
 
