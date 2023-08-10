@@ -28,10 +28,10 @@ ENTRYPOINT docsify serve .
 BUILD IMAGE : with that dockerfile create a image  with a name .  
 
 ```bash
-ravi@client3:~/Mydocsify1$ **podman build -f Dockerfile -t mydoc .     # .** represent current directory
+ravi@client3:~/Mydocsify1$ podman build -f Dockerfile -t mydoc .     # . represent current directory
 
 # output : 
-ravi@client3:~/Mydocsify1$ **podman build -f Dockerfile -t mydoc .**
+ravi@client3:~/Mydocsify1$ podman build -f Dockerfile -t mydoc .
 STEP 1/7: FROM node:latest
 Resolved "node" as an alias (/etc/containers/registries.conf.d/000-shortnames.conf)
 Trying to pull docker.io/library/node:latest...
@@ -72,8 +72,8 @@ STEP 6/7: EXPOSE 3000/tcp
 STEP 7/7: ENTRYPOINT docsify serve . 
 COMMIT mydoc
 --> 850de2e37b4
-**Successfully tagged localhost/mydoc:latest
-850de2e37b41120b2e042f8002d9ed33757d633882a42b1726f9bf5ac1203411**
+Successfully tagged localhost/mydoc:latest
+850de2e37b41120b2e042f8002d9ed33757d633882a42b1726f9bf5ac1203411
 ```
 
 Create github account  
@@ -86,9 +86,9 @@ Create github account
 Login in github via command line  
 
 ```bash
-ravi@client3:~/Mydocsify1/Documentation-work$ **git config --global user.name "ravi25shankar"**
-ravi@client3:~/Mydocsify1/Documentation-work$ **git config --global user.email ravishankar.ravi@fosteringlinux.com**
-ravi@client3:~/Mydocsify1/Documentation-work$ **gh auth login**
+ravi@client3:~/Mydocsify1/Documentation-work$ git config --global user.name "ravi25shankar"
+ravi@client3:~/Mydocsify1/Documentation-work$ git config --global user.email ravishankar.ravi@fosteringlinux.com
+ravi@client3:~/Mydocsify1/Documentation-work$ gh auth login
 
 ? What account do you want to log into? GitHub.com
 ? What is your preferred protocol for Git operations? HTTPS
@@ -96,7 +96,7 @@ ravi@client3:~/Mydocsify1/Documentation-work$ **gh auth login**
 ? How would you like to authenticate GitHub CLI? Paste an authentication token
 Tip: you can generate a Personal Access Token here https://github.com/settings/tokens
 The minimum required scopes are 'repo', 'read:org', 'workflow'.
-? Paste your authentication token: ****************************************
+? Paste your authentication token: 
 - gh config set -h github.com git_protocol https
 ✓ Configured git protocol
 ✓ Logged in as ravi25shankar
@@ -105,7 +105,7 @@ The minimum required scopes are 'repo', 'read:org', 'workflow'.
 Clone that git repository  in created directory (Mydocsify)
 
 ```bash
-ravi@client3:~/Mydocsify1$ **git clone https://github.com/ravi25shankar/Documentation-work.git**
+ravi@client3:~/Mydocsify1$ git clone https://github.com/ravi25shankar/Documentation-work.git
 Cloning into 'Documentation-work'...
 remote: Enumerating objects: 3, done.
 remote: Counting objects: 100% (3/3), done.
@@ -118,9 +118,9 @@ Create container
 
 ```bash
 ravi@client3:~/Mydocsify1/Documentation-work$ pwd
-**/home/ravi/Mydocsify1/Documentation-work**
+/home/ravi/Mydocsify1/Documentation-work
 
-ravi@client3:~/Mydocsify1/Documentation-work$ **podman run -d --name docsify1 -p 3000:3000 -v /home/ravi/Mydocsify1/Documentation-work:/docs mydoc:latest** 
+ravi@client3:~/Mydocsify1/Documentation-work$ podman run -d --name docsify1 -p 3000:3000 -v /home/ravi/Mydocsify1/Documentation-work:/docs mydoc:latest 
 cf648ec07024b470d69d95247b97ad52e420d6eba818975d64b59e0767202f5d
 ravi@client3:~/Mydocsify1/Documentation-work$ podman ps
 CONTAINER ID  IMAGE                       COMMAND               CREATED        STATUS            PORTS                                           NAMES
@@ -195,5 +195,14 @@ To https://github.com/ravi25shankar/Documentation-work.git
    99d9855..a9f99d3  main -> main
 ```
 
-Check on browser  
-localhost:3000/#/docsifydoc.md or ip:3000/#/docsifydoc.md
+Check on browser
+```bash
+  
+localhost:3000/#/docsifydoc.md 
+
+```
+```bash
+
+ip:3000/#/docsifydoc.md
+
+```
