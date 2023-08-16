@@ -1,4 +1,4 @@
-# superset
+# Superset
 
 ## 1. Task requirement
 
