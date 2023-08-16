@@ -19,7 +19,7 @@ the containers, pods or volumes described in the YAML.
 
 # 2 . Environment Details
 
-OS ubuntu - 20
+OS ubuntu - 20.04
 
 # 3 . List of tools and technologies
 
@@ -59,7 +59,9 @@ curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share
 ```
 
 - **`curl https://baltocdn.com/helm/signing.asc`**: This uses the **`curl`** command-line tool to download the contents of the specified URL, which appears to be the GPG (GNU Privacy Guard) signing key for Helm, a package manager for Kubernetes.
+
 - **`gpg --dearmor`**: This uses the **`gpg`** command to dearmor the GPG key. In GPG, "dearmor" means to convert a GPG public or private key from the binary format to a text-based format. This is often done for distribution or storage purposes.
+
 - **`sudo tee /usr/share/keyrings/helm.gpg > /dev/null`**: This part of the command uses **`tee`** to write the output of the previous **`gpg`** command to the file **`/usr/share/keyrings/helm.gpg`**.
 - The **`> /dev/null`** part at the end redirects the standard output (stdout) to the "null" device .
 
@@ -88,13 +90,18 @@ sudo apt update
 ```bash
 sudo apt install helm
 ```
+![image](https://github.com/ravi25shankar/Documentation-work/assets/141721174/c1f20af9-8316-46cc-a9f4-80dc240c70e6)
+
 
 **Step 5 : create directory** 
 
 ```bash
 mkdir superset-poc
+```
+```
 cd superset-poc
 ```
+
 
 **Step 6 : create yaml file  and add details in it** 
 
@@ -130,7 +137,11 @@ helm template -install podman-dry-run --debug superset/superset --generate-name 
 
 In summary, this command generates Kubernetes manifests for deploying the Superset application using a specific Helm chart and custom configuration values from the `values-stage.yaml` file. The generated manifests are saved in the `superset-kube.yaml` file. The use of `--dry-run` and `--debug` ensures that we can preview the manifests before actually deploying the application, it helps to  verify that the configuration is correct.
 
-**Step 8 : # Edit this  superset-kube.yaml and create a new final.yaml as per the requirement in podman play kube.**
+![image](https://github.com/ravi25shankar/Documentation-work/assets/141721174/2fa222fc-f534-488e-a9de-aee30442ee3a)
+
+
+**Step 8 : # Edit this  superset-kube.yaml and create a new final.yaml as per the requirement in podman play kube.**  
+
 
 Add the below data -
 
@@ -576,6 +587,7 @@ sh pre-install-task.sh
 ```bash
 ls -lrth    # list all of the files in the current directory,
 ```
+![image](https://github.com/ravi25shankar/Documentation-work/assets/141721174/a5aeab49-b7c2-495b-a972-ffc1a131dc2d)
 
 **Step 12 : install podman** 
 
@@ -592,3 +604,28 @@ podman play kube final.yaml
 ```
 
 - This command will create the pods and containers described in the file `final.yaml`. The containers within the pod will then be started, and the ID of the new Pod will be output.
+
+![image](https://github.com/ravi25shankar/Documentation-work/assets/141721174/58fb7279-c062-4b11-8b17-204b0651a5d5)
+
+
+**Step 13 : Test case list**  
+![image](https://github.com/ravi25shankar/Documentation-work/assets/141721174/e7496bf1-9876-4243-9cb0-81615fd370a2)
+
+**Screenshot with pass test cases result**
+
+**Go to the browser.**
+![image](https://github.com/ravi25shankar/Documentation-work/assets/141721174/eaaf3cbb-cea7-43ab-a0a4-d44ac39e8a31)
+
+
+
+**Login with default credentials username: admin password: admin**
+superset-kube.yaml
+![image](https://github.com/ravi25shankar/Documentation-work/assets/141721174/e3820a18-bc22-4124-b4c7-a933a6434fc0)
+
+
+## Reference link
+
+**https://helm.sh/docs/intro/install/**  
+
+**https://docs.podman.io/en/v4.2/markdown/podman-play-kube.1.html**
+
