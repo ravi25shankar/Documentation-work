@@ -1,6 +1,6 @@
 # Superset
 
-## 1. Task requirement
+# 1. Task requirement
 
 To run the **superset** with a **podman play kube** which is generated with the helm chart of the
 superset.
@@ -58,6 +58,7 @@ most Unix operating systems, like MacOS and Linux.
 curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg > /dev/null
 ```
 
+
 - **`curl https://baltocdn.com/helm/signing.asc`**: This uses the **`curl`** command-line tool to download the contents of the specified URL, which appears to be the GPG (GNU Privacy Guard) signing key for Helm, a package manager for Kubernetes.
 
 - **`gpg --dearmor`**: This uses the **`gpg`** command to dearmor the GPG key. In GPG, "dearmor" means to convert a GPG public or private key from the binary format to a text-based format. This is often done for distribution or storage purposes.
@@ -70,6 +71,7 @@ curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share
 ```bash
 $ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.gpg] https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
 ```
+
 
 - This line tells the apt package manager to download Helm packages from the `https://baltocdn.com/helm/stable/debian/` repository.
 - The `arch=$(dpkg --print-architecture)` part tells the apt package manager to download the correct package for your system architecture.
@@ -90,6 +92,7 @@ sudo apt update
 ```bash
 sudo apt install helm
 ```
+
 ![image](https://github.com/ravi25shankar/Documentation-work/assets/141721174/c1f20af9-8316-46cc-a9f4-80dc240c70e6)
 
 
@@ -126,6 +129,7 @@ certmanager-issuer:
 helm template -install podman-dry-run --debug superset/superset --generate-name --values values-stage.yaml > superset-kube.yaml
 ```
 
+
 - `helm template`: This is the command that tells Helm to generate Kubernetes manifests based on a Helm chart.
 - `--dry-run`: This  indicates  Helm will simulate the installation without actually deploying anything. This is useful for seeing what manifests would be generated without affecting the cluster.
 - `--debug`: This enables debug output, providing more detailed information about the Helm template process.
@@ -136,6 +140,7 @@ helm template -install podman-dry-run --debug superset/superset --generate-name 
 - `> superset-kube.yaml`: This part of the command uses the output redirection (`>`) to save the generated Kubernetes manifests to a file named `superset-kube.yaml`.
 
 In summary, this command generates Kubernetes manifests for deploying the Superset application using a specific Helm chart and custom configuration values from the `values-stage.yaml` file. The generated manifests are saved in the `superset-kube.yaml` file. The use of `--dry-run` and `--debug` ensures that we can preview the manifests before actually deploying the application, it helps to  verify that the configuration is correct.
+
 
 ![image](https://github.com/ravi25shankar/Documentation-work/assets/141721174/2fa222fc-f534-488e-a9de-aee30442ee3a)
 
@@ -571,6 +576,8 @@ chmod +x superset/superset_config.py
 chmod +x superset/superset_bootstrap.sh
 ```
 
+**step 11 : Permission for the file** 
+
 ```bash
 chmod +x pre-install-task.sh
 ```
@@ -578,7 +585,7 @@ chmod +x pre-install-task.sh
 - chmod : change the permissions of a file or directory.
 - +x  : to add the execute permission to the file or directory.
 
-**step 11 : Run the script** 
+**step 12 : Run the script** 
 
 ```bash
 sh pre-install-task.sh
@@ -589,7 +596,7 @@ ls -lrth    # list all of the files in the current directory,
 ```
 ![image](https://github.com/ravi25shankar/Documentation-work/assets/141721174/a5aeab49-b7c2-495b-a972-ffc1a131dc2d)
 
-**Step 12 : install podman** 
+**Step 13 : install podman** 
 
 ```bash
 sudo apt install podman    # install podman       
@@ -597,7 +604,7 @@ sudo apt install podman    # install podman
 
        
 
-**Step 13 : create the pods and containers** 
+**Step 14 : create the pods and containers** 
 
 ```bash
 podman play kube final.yaml
@@ -608,12 +615,14 @@ podman play kube final.yaml
 ![image](https://github.com/ravi25shankar/Documentation-work/assets/141721174/58fb7279-c062-4b11-8b17-204b0651a5d5)
 
 
-**Step 13 : Test case list**  
+**Step 15 : Test case list**  
+
 ![image](https://github.com/ravi25shankar/Documentation-work/assets/141721174/e7496bf1-9876-4243-9cb0-81615fd370a2)
 
 **Screenshot with pass test cases result**
 
-**Go to the browser.**
+**Step 15 : Go to the browser** 
+
 ![image](https://github.com/ravi25shankar/Documentation-work/assets/141721174/eaaf3cbb-cea7-43ab-a0a4-d44ac39e8a31)
 
 
