@@ -5,14 +5,14 @@
 To run the **superset** with a **podman play kube** which is generated with the helm chart of the
 superset.
 
-## What is **Superset ?**
+## Defination of **Superset **
 
 Superset is a modern data exploration and data visualisation platform. Superset can replace
 or augment proprietary business intelligence tools for many teams. Superset integrates well
 with a variety of data sources. Superset provides: A no-code interface for building charts
 quickly.
 
-## What is podman play kube ?
+## Defination of  podman play kube ?
 
 Podman play kube will be read in a structured file of Kubernetes YAML. It will then recreate
 the containers, pods or volumes described in the YAML.
