@@ -5,7 +5,7 @@
 To run the **superset** with a **podman play kube** which is generated with the helm chart of the
 superset.
 
-## Defination of **Superset **
+## Defination of Superset
 
 Superset is a modern data exploration and data visualisation platform. Superset can replace
 or augment proprietary business intelligence tools for many teams. Superset integrates well
